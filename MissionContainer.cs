@@ -21,5 +21,9 @@ namespace Excercise_1
                 container[func] = value;
             }
         }
+        public List<string> getAllMissions()
+        {
+            return container.Keys.ToList();  
+        }
     }
 }

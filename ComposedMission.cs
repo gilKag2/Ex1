@@ -8,7 +8,7 @@ namespace Excercise_1
 {
     public class ComposedMission : IMission
     {
-        private List<SingleMission> missions = new List<SingleMission>();
+        private List<Delegate> missions = new List<Delegate>();
         private string name;
         private string type;
         public string Name
@@ -26,11 +26,16 @@ namespace Excercise_1
                 return type;
             }
         }
+        public ComposedMission add(Delegate del)
+        {
+            missions.Add(del);
+            return this;
+        }
         public event EventHandler<double> OnCalculate;
-
+       
         public double Calculate(double value)
         {
-            throw new NotImplementedException();
+            
         }
     }
 }
