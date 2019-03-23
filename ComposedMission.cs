@@ -8,9 +8,10 @@ namespace Excercise_1
 {
     public class ComposedMission : IMission
     {
-        private List<Delegate> missions = new List<Delegate>();
+        
+        private FuncDelegate composedMission;
+        private List<FuncDelegate> missions = new List<FuncDelegate>();
         private string name;
-        private string type;
         public string Name
         {
             get
@@ -23,10 +24,14 @@ namespace Excercise_1
         {
             get
             {
-                return type;
+                return "Composed";
             }
         }
-        public ComposedMission add(Delegate del)
+        public ComposedMission(string name)
+        {
+            this.name = name;
+        }
+        public ComposedMission Add(FuncDelegate del)
         {
             missions.Add(del);
             return this;
@@ -35,7 +40,14 @@ namespace Excercise_1
        
         public double Calculate(double value)
         {
-            
+            double res = value;
+            foreach (FuncDelegate func in missions)
+            {
+                res = func(res);
+            }
+            OnCalculate?.Invoke(this, res);
+            return res;
+
         }
     }
 }

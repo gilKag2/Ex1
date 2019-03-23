@@ -8,8 +8,18 @@ namespace Excercise_1
 {
     public class SingleMission : IMission
     {
+       
+        private FuncDelegate mission;
+       
+
+        public SingleMission(FuncDelegate del, string name)
+        {
+            this.name = name;
+            this.mission = new FuncDelegate(del);
+        }
+
+        public event EventHandler<double> OnCalculate;
         private string name;
-        private string type;
         public string Name
         {
             get
@@ -22,15 +32,17 @@ namespace Excercise_1
         {
             get
             {
-                return type;
+                return "Single";
             }
         }
 
-        public event EventHandler<double> OnCalculate;
 
         public double Calculate(double value)
         {
-            throw new NotImplementedException();
+            double res = mission(value);
+            OnCalculate?.Invoke(this, res);
+            return res;
+           
         }
     }
 }

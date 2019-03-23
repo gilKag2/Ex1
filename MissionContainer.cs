@@ -6,19 +6,25 @@ using System.Threading.Tasks;
 
 namespace Excercise_1
 {
-
+    public delegate double FuncDelegate(double val);
+    
     public class FunctionsContainer
     {
-        Dictionary<string, Delegate> container = new Dictionary<string, Delegate>();
-        public Delegate this[string func]
+      
+        Dictionary<string, FuncDelegate> container = new Dictionary<string, FuncDelegate>();
+        public double Stam(double val) => val;
+       
+        public FuncDelegate this[string funcName]
         {
             get
             {
-                return container[func];
+                if (container.ContainsKey(funcName))
+                    return container[funcName];
+                else return Stam;
             }
             set
             {
-                container[func] = value;
+                container[funcName] = value;
             }
         }
         public List<string> getAllMissions()
@@ -26,4 +32,5 @@ namespace Excercise_1
             return container.Keys.ToList();  
         }
     }
+    
 }
