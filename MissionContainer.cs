@@ -20,7 +20,11 @@ namespace Excercise_1
             {
                 if (container.ContainsKey(funcName))
                     return container[funcName];
-                else return Stam;
+                else
+                {
+                    container[funcName] = Stam;
+                    return Stam;
+                }
             }
             set
             {
