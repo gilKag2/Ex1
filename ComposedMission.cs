@@ -1,4 +1,9 @@
-﻿using System;
+﻿/******************
+ * Gil Kagan
+ * 315233221
+*******************/
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,10 +13,11 @@ namespace Excercise_1
 {
     public class ComposedMission : IMission
     {
-        
-        private FuncDelegate composedMission;
         private List<FuncDelegate> missions = new List<FuncDelegate>();
         private string name;
+        /*
+         * returns the name of the mission.
+         */ 
         public string Name
         {
             get
@@ -19,7 +25,9 @@ namespace Excercise_1
                 return name;
             }
         }
-        
+        /*
+         * returns the type of the missions.
+         */
         public string Type
         {
             get
@@ -31,13 +39,19 @@ namespace Excercise_1
         {
             this.name = name;
         }
-        public ComposedMission Add(FuncDelegate del)
+        /*
+         * adds the func to the list of functions.
+         */
+        public ComposedMission Add(FuncDelegate func)
         {
-            missions.Add(del);
+            missions.Add(func);
             return this;
         }
         public event EventHandler<double> OnCalculate;
        
+        /*
+         * activates the functions by order, and returns the value.
+         */ 
         public double Calculate(double value)
         {
             double res = value;
@@ -45,6 +59,7 @@ namespace Excercise_1
             {
                 res = func(res);
             }
+            // invokes the listeners
             OnCalculate?.Invoke(this, res);
             return res;
 
