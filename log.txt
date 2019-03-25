@@ -1,0 +1,41 @@
+commit d6f07d62b33822bbe6127f8b2bd043405f781080
+Author: gilKag2 <35850376+gilKag2@users.noreply.github.com>
+Date:   Sat Mar 23 20:42:05 2019 +0200
+
+    Added comments
+
+commit 833627fde0f0ce9a8663873b1a5727eba60ecc86
+Author: gilKag2 <35850376+gilKag2@users.noreply.github.com>
+Date:   Sat Mar 23 19:43:45 2019 +0200
+
+    small update
+
+commit c47f34f55af4df9ec861ccb6edd18629f9853df2
+Author: gilKag2 <35850376+gilKag2@users.noreply.github.com>
+Date:   Sat Mar 23 17:46:35 2019 +0200
+
+    First part done and tested
+
+commit 6dfde2aa146a6a79a4edcdb2124b074738589be4
+Author: gilKag2 <35850376+gilKag2@users.noreply.github.com>
+Date:   Fri Mar 22 09:40:59 2019 +0200
+
+    small update
+
+commit 398f30c1a60eb5fded6c1707c45a2fd8dc2c500e
+Author: gilKag2 <35850376+gilKag2@users.noreply.github.com>
+Date:   Fri Mar 22 09:40:16 2019 +0200
+
+    Create Exercise1.pdf
+
+commit e370527502d11dacc4785713910e4a7debef9f67
+Author: gilKag2 <35850376+gilKag2@users.noreply.github.com>
+Date:   Thu Mar 21 18:51:23 2019 +0200
+
+    Base
+
+commit c62da60c04a88d4601c9d68a812364e0127f575a
+Author: gilKag2 <35850376+gilKag2@users.noreply.github.com>
+Date:   Mon Mar 18 16:00:35 2019 +0200
+
+    Initial commit
